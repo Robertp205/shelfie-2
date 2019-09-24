@@ -1,0 +1,19 @@
+.big-yeet{
+    height: 100vh;
+    width:100vw
+}
+
+.yeet-box{
+    height: 30vh;
+    width: 30vw;
+    background: #3ad886;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    margin: auto;
+    border-radius: 7px;
+    margin-top: 40px
+    
+
+}

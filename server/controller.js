@@ -1,10 +1,14 @@
-const getInventory = (req, res)=> {
+const getInventory = async (req, res)=> {
     const db = req.app.get('db')
-    db.get_inventory().then(()=>{
-        res.status(200).send('dis is da stuff')
-    })
+    const inventory = await db.get_inventory()
+    res.status(200).send(inventory)
+
+
+    // db.get_inventory().then(()=>{
+    //     res.status(200).send(inventory)
+    // })
     
-};
+}
 
 const createProduct = (req,res) => {
     const {name, price, img} = req.body;
@@ -12,7 +16,7 @@ const createProduct = (req,res) => {
     db.create_product([name,price, img]).then(()=>  {
         res.status(200).send('product wuz created')
     })
-};
+}
 
 const updateProduct = (req, res) => {
     const {id} = req.params;
@@ -21,7 +25,7 @@ const updateProduct = (req, res) => {
     db.update_product([name, price, img, id]).then(()=>{
         res.status(200).send('updated product')
     })
-};
+}
 
 const deleteProduct = (req,res) => {
     const {id} = req.params;
@@ -39,11 +43,11 @@ module.exports = {
     deleteProduct
 } 
 
-let inventory = [
-    {
-        id: 1,
-        name: 'boots',
-        price: 20,
-        img: blablabla
-    }
-]
+// let inventory = [
+//     {
+//         id: 1,
+//         name: 'boots',
+//         price: 20,
+//         img: 'blablabla'
+//     }
+// ]

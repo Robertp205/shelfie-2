@@ -1,0 +1,30 @@
+.box-holder{
+    width:100vw;
+    height: 100vh
+}
+
+.product-box {
+    width: 40vw;
+    height: 20vh;
+    background: #D34735;
+    border-radius: 5px;
+    margin-left: 30%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px
+    
+    
+
+}
+
+.picture-box{
+    width: 25vw;
+    height: 18vh ;
+    background: white;
+    margin: 8px
+}
+
+.text-product{
+    display: flex;
+    flex-direction: column
+}

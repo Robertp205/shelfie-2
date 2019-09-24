@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 import mainRouter from './Routes/main.router'
+import Header from './Components/Header/Header'
 
 export default class App extends Component {
     constructor(){
@@ -11,43 +12,12 @@ export default class App extends Component {
         }
     }
 
-    componentDidMount =()=>{
-        axios.get('/api/inventory')
-            .then(res =>{
-              console.log('yeet');
-              
-                this.setState({
-                    inventory: res.data
-                })
-            })
-        
-        axios.post('api/inventory').then(res=>{
-          console.log('no');
-          
-          this.setState({
-            name: res.data,
-            price: res.data,
-            img: res.data
-          })
-        })
-        axios.put('/api/inventory/:id').then(res=>{
-          console.log('o2');
-          
-          this.setState({
-            id: res.data,
-            name: res.data,
-            price: res.data,
-            img: res.data
-          })
-        })
     
-        
-      }
 
     render() {
         return (
             <div>
-               
+               <Header/>
                 {mainRouter}
             </div>
         )
